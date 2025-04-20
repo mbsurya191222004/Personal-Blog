@@ -1,10 +1,14 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 from .serializers import BlogsSerializer
+from django.contrib.auth.models import User
 
 # Create your views here.
 
 class Blog(APIView):
+    permission_classes = [IsAuthenticated]
+
     def post(self,request):
         data=request.data
         user=request.user
@@ -19,4 +23,19 @@ class Blog(APIView):
         return Response(serializer.error_messages)
     
     def get(self,request):
-        return Response({"heelll":1})
+        return Response({"sample":1})
+    
+class SignUp(APIView):
+    def post(self,request):
+        data=request.data
+        user=request.user
+
+        username = data['username']
+        password = data['password']
+
+        User.objects.create_user(username=username,password=password)
+
+        return Response({
+            "username" : username,
+            "password" : password,
+        })

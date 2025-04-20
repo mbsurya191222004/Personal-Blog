@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'MainApp',
     'rest_framework',
 ]
@@ -69,6 +70,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'BytesOfMe.wsgi.application'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 
 # Database
