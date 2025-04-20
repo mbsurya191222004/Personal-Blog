@@ -36,7 +36,6 @@ class Blog(APIView):
 class SignUp(APIView):
     def post(self,request):
         data=request.data
-        user=request.user
 
         username = data['username']
         password = data['password']
