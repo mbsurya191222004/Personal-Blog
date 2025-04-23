@@ -17,12 +17,19 @@ async function SignUp(username : string , password : string){
         )
         if(!response.ok){
             throw new Error(`HTTP error! Status: ${response.status}`);
+            return {
+                data : null ,
+                success : false,
+            }
         }
     
         const data = await response.json();
         console.log(data);
         
-        return data
+        return {
+            data : data ,
+            success : true
+        }
     }catch(error){
         console.error(error);
         
@@ -32,10 +39,8 @@ async function SignUp(username : string , password : string){
 
 }
 
-
-
 function main() : void{
         console.log("STARTED !!!!");
-        SignUp("surya44","1234");
+        SignUp("surya4421","1234");
 }
 main();
