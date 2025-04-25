@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'BytesOfMe.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://preview-typescript.playcode.io/",
 ]
 
 REST_FRAMEWORK = {
