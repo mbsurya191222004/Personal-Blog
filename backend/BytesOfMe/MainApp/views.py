@@ -28,10 +28,8 @@ class Blog(APIView):
         user=request.user
 
         all_task = Blogs.objects.filter(user=user)
-        print(all_task)
-
-
-        return Response({"sample":1})
+        serializer = BlogsSerializer(all_task, many=True)
+        return Response(serializer.data)
     
 class SignUp(APIView):
     def post(self,request):
