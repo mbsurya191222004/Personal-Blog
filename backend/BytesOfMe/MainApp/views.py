@@ -26,6 +26,7 @@ class Blog(APIView):
     
     def get(self,request):
         user=request.user
+        print(user)
 
         all_task = Blogs.objects.filter(user=user)
         serializer = BlogsSerializer(all_task, many=True)
