@@ -3,7 +3,7 @@ import Login from "./pages/Login/Login"
 import Home from "./pages/Home/Home"
 import BlogCard from "./components/BLogCard"
 
-import { Routes,Route } from "react-router-dom"
+import { Routes,Route, useNavigate } from "react-router-dom"
 
 
 function App() {
