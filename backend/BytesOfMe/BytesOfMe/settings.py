@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'BytesOfMe.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://preview-typescript.playcode.io/",
+    "https://preview-typescript.playcode.io",
 ]
 
 REST_FRAMEWORK = {
@@ -97,7 +97,7 @@ SIMPLE_JWT = {
     "UPDATE_LAST_LOGIN": False,
 
     "ALGORITHM": "HS256",
-    "SIGNING_KEY": settings.SECRET_KEY,
+    "SIGNING_KEY": SECRET_KEY,
     "VERIFYING_KEY": "",
     "AUDIENCE": None,
     "ISSUER": None,
