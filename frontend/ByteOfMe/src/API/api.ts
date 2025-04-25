@@ -1,6 +1,7 @@
 const BASE_URL : string = "https://bytesofme.onrender.com/"
 
-const TOKEN = localStorage.getItem("authToken");
+const TOKEN = localStorage.getItem("authToken")
+
 
 const SignUp = async (username: string, password: string) => {
     console.log("SignUp function called with username:", username, "and password:", password);
@@ -39,7 +40,8 @@ const SignUp = async (username: string, password: string) => {
 };
 
 const Login = async (username: string, password: string) => {
-    console.log("Login function called with username:", username, "and password:", password);
+    console.log("Login function called");
+    Logout();
 
     try {
         const response = await fetch(BASE_URL + "GetToken/", {
@@ -60,8 +62,10 @@ const Login = async (username: string, password: string) => {
         const data = await response.json();
         console.log(data);
 
-        if (data.token) {
-            localStorage.setItem("authToken", data.token);
+        if (data.access) {
+            
+            localStorage.setItem("authToken", data.access);
+            
         }
         return {
             data: data,

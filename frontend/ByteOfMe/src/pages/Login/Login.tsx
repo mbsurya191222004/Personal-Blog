@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 
 import { Login } from "../../API/api";
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage: React.FC = () => {
     const [Username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    const navigate = useNavigate();
     
 
     const handleLogin = async (e: React.FormEvent) => {
@@ -16,6 +19,9 @@ const LoginPage: React.FC = () => {
             const response = await Login(Username, password);
             if (response.success) {
                console.log("Login successful:", response.data);
+               
+               navigate("/home");
+               window.location.reload();
                
             } else {
                 console.log("Login failed:", response.data);
