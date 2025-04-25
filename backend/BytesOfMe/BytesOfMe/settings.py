@@ -82,6 +82,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://preview-typescript.playcode.io",
         "http://192.168.0.101:5173",
+        "https://mbsurya191222004.github.io/Personal-Blog-frontend/dist",
 ]
 
 REST_FRAMEWORK = {
