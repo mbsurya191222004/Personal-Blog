@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
-import { GetBlogs, TOKEN } from "../../API/api";
+import { GetBlogs, Logout, TOKEN } from "../../API/api";
 import BlogCard from "../../components/BLogCard";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
 
-    const [Blogs,setBlogs] = useState([]);
+    interface Blog {
+        title: string;
+        blog: string;
+    }
+
+    const [Blogs, setBlogs] = useState<Blog[]>([]);
     const navigate = useNavigate();
+
+    const handleLogoutClick = () =>{
+        Logout();
+        navigate("/login")
+    }
 
     
 
@@ -43,6 +53,9 @@ function Home() {
 
     return (  
     <>
+        <div id="navbar">
+            <button onClick={handleLogoutClick}>Logout</button>
+        </div>
         {
             Blogs.map(
                 (blog) => <BlogCard Title={blog.title} Blog={blog.blog} IsEditable={false}/>

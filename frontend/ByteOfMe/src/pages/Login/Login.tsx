@@ -32,6 +32,10 @@ const LoginPage: React.FC = () => {
         }
     };
 
+    const handleSignupClick = () => {
+        navigate("/");
+    }
+
     return (
         <div className="login-container">
             <h1>Login</h1>
@@ -59,6 +63,11 @@ const LoginPage: React.FC = () => {
                 {error && <p className="error">{error}</p>}
                 <button type="submit">Login</button>
             </form>
+
+            <div>
+            <label htmlFor="">don't have an account?</label>
+            <button onClick={handleSignupClick}>Sign Up</button>
+            </div>
         </div>
     );
 };

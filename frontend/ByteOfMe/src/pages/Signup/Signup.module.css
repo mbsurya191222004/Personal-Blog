@@ -1,0 +1,18 @@
+.container{
+    background-color: aqua;
+
+    margin: 25%;
+    width: 60%;
+    height: 40vh;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#SignUpdiv{
+    background-color: blue;
+}

@@ -13,9 +13,10 @@ const BlogCard: React.FC<BlogCardProps> = ({Title="",Blog="",IsEditable=true}) =
     const [title, setTitle] = useState(Title);
     const [content, setContent] = useState(Blog);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         PostBlog(title, content);
         setIsEditable(false);
+        await new Promise(resolve => setTimeout(resolve, 200));
         window.location.reload();
     };
 
