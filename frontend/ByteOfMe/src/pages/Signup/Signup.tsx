@@ -60,10 +60,10 @@ function Signup() {
 
    
     const SignInfailed = (
-        <>
+        <div>
             <h1>Sign In failed!!!</h1>
             <button onClick={handletryagain}>Try again</button>
-        </>
+        </div>
     );
 
     const SignedIn = (
@@ -90,7 +90,7 @@ function Signup() {
 
             <div className="LogInDiv">
             <label htmlFor="">already have an account?</label>
-            <button onClick={handleLoginClick}>Log In</button>
+            <button id="logInButton" onClick={handleLoginClick}>Log In</button>
             </div>
             <div/>
         </div>

@@ -1,4 +1,4 @@
-const BASE_URL : string = "https://bytesofme.onrender.com/"
+const BASE_URL : string = "https://bytesofme-o57l.onrender.com/"
 
 const TOKEN = localStorage.getItem("authToken")
 
